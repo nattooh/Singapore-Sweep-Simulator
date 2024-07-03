@@ -1,7 +1,7 @@
 
-// document.addEventListener('contextmenu', function (event) {
-//     event.preventDefault();
-// });
+document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+});
 
 const lowerBound = 1000000;
 const upperBound = 4499999;
@@ -272,7 +272,6 @@ function checkIfWon(betNumber) {
 
         for (let number of winningNumbers[0]) {
             if (number == betNumber) {
-                console.log(betNumber + "won a prize! " + key);
                 winningCategories.push(key);
             }
             else if (key == "Two-Digit Delight Prizes") {
