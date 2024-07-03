@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile-Friendly Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            user-select: none;
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE 10+ */
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .show-when-start {
+            display: none;
+            background-color: lightblue;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .input-group {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Singapore Sweep Simulator</a>
+
+    </nav>
+    <div class="container">
+        <div class="content">
+            <h1 class="mt-5">Just for fun</h1>
+            <p class="lead">Enter a 7-digit number or click start to simulate quick pick.</p>
+
+
+
+            <div class="show-when-start" id="showWhenStart">
+                <p id="timeDisplay" value=""></p>
+                <p id="prizeDisplay" value=""></p>
+
+                <p id="firstPrize"></p>
+                <p id="secondPrize"></p>
+                <p id="thirdPrize"></p>
+                <p id="jackpotPrizes"></p>
+                <p id="luckyPrizes"></p>
+                <p id="giftPrizes"></p>
+                <p id="consolationPrizes"></p>
+                <p id="participationPrizes"></p>
+                <p id="twoDigitDelightPrizes"></p>
+            </div>
+        </div>
+
+
+        <div class="input-group p-3 bg-light">
+            <div class="container">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="jackpotCheck">
+                    <label class="form-check-label" for="jackpotCheck">Stop when hit jackpot</label>
+                </div>
+            </div>
+            <div class="container">
+                <input type="text" id="digitInput" class="form-control" placeholder="Enter a 7-digit number">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" id="startButton" onclick="startCounter()"
+                        type="button">Start</button>
+                </div>
+            </div>
+            <div class="container">
+                <p id="error-message" style="color: red; display: none;">Please enter a number between 1,000,000 and
+                    4,499,999.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+</html>
