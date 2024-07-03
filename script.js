@@ -37,7 +37,6 @@ var betNumber;
 var haventjackpot = true;
 var allWinningNumbers;
 
-// Define the prize categories with their weights (quantities)
 const prizes = new Map([
     ["First Prize", 2300000],
     ["Second Prize", 500000],
@@ -71,9 +70,7 @@ function startCounter() {
     let timeDisplayElement = document.getElementById("timeDisplay");
     showWhenStart.style.display = 'block'; // directly set to 'block'
 
-
     const intervalId = setInterval(function () {
-
         let jackpotCheck = document.getElementById("jackpotCheck").checked;
         haventjackpot = jackpotCheck;
 
@@ -106,7 +103,7 @@ function startCounter() {
             ["Two-Digit Delight Prizes", [generateTwoDigitWinningNumbers(9)]]
         ]);
 
-        checkIfWon(3929483);
+        checkIfWon(betNumber);
         totalWinnings = totalWinnings - 3;
         // Display results
         if (winningCategories.length > 0) {
@@ -227,7 +224,7 @@ function startCounter() {
         }
 
         timeElapsed++;
-    }, 1); // Adjust interval time to 1 second for clarity
+    }, 1); 
 }
 
 function isWithinRange(input) {
@@ -279,8 +276,6 @@ function checkIfWon(betNumber) {
                     winningCategories.push(key);
                 }
             }
-
-
         }
     });
 
